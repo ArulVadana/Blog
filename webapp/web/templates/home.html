@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block log %}
+<li ><a class=page href="/">Home </a></li>
+<li ><a class=page href="/login">Login</a></li>
+<li><a class=page href="/signup">Signup</a></li>
+{% endblock %}
+
+
+    
+
+{%block container%}
+<div class=blog>
+
+    <h3 class=heading>{% block title %} Blogs {% endblock %}</h3>
+
+{%block content %}
+<ul>
+{% for blog in blogs.items %}
+    <li class="box">
+        <h3 style="margin: 10px;">{{blog.title}}</h3>
+       
+        {% for u in user%}
+            {%if u.id==blog.user_id%}
+            <p class=author>By {{u.first_name}} on {{blog.date.strftime('%B %d,%Y %I:%M:%S %p')}}</p>
+            {% endif%}  
+        {%endfor%}
+        <br>  
+        <p class='blogs'>{{blog.data}}</p>
+        
+        <br>
+    </li>
+    
+{% endfor %}
+
+</ul>
+<div class='page_nav'>
+{% for page in blogs.iter_pages() %}
+{% if page %}
+    {% if page!= blogs.page %}
+        <a class='page_box' href="{{url_for('view.home',page=page)}}">{{ page }}</a>
+    {% else %}
+        <strong>{{page}}</strong> 
+    {% endif %}
+{%endif %}
+{% endfor %} 
+</div>          
+{% endblock %}
+</div>
+<div>
+    <footer id="foot">
+            
+        <p>&copy; copyrights 2021</p>
+                
+    </footer>
+</div>
+
+{%endblock%}
+
+
+ 
+    
+

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block log %}
+<li ><a class=page href="/logout">Logout</a></li>
+<li ><a class=page href="/myblog">My Blog</a></li>
+<h2 class="user-name">Welcome {{user.first_name}}</h2>        
+{% endblock %}
+
+{%block container%}
+<div class=blog>
+    <h3 class=heading>{% block title %} My Blog {% endblock %}</h3>
+
+
+{% block content %}
+<div>
+<ul>
+    {% for note in user.notes %}
+    <li class='box'>
+        <h3 style="margin: 10px;">{{ note.title }}</h3>
+        <p class=author>On {{note.date.strftime('%B %d,%Y %I:%M:%S %p')}}</p>
+        <br>
+        <p class=blogs>{{ note.data}}</p>
+        
+        <button type="submit" class=btn name="delete" onclick="location.href='/delete/{{note.id}}';">Delete</button>
+        <button type="submit" class=btn name="edit" onclick="location.href='/edit/{{note.id}}';">Edit</button>
+       
+    </li>
+    {% endfor %}
+</ul>
+</div> 
+<br>
+<form method="POST">
+    <label for="title" style="color:orangered;">Title </label>
+    <br>
+    <input type="text" id="title" name="title" placeholder="Enter the title" class="title" />
+    <br>
+    <label for="note" style="color: orangered;">Blog</label>
+    <br>
+    <textarea name="note" id="note" cols="10" rows="5" placeholder="Write your blog" class="writeblog"></textarea> 
+    
+    <button type="submit" class=btn >Post</button>
+</form>
+{% endblock %}
+</div>
+<div>
+    <footer id="foot">
+            
+        <p>&copy; copyrights 2021</p>
+                
+    </footer>
+</div>
+
+{% endblock %}

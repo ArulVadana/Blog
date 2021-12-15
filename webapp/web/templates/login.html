@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block log %}
+<li ><a class=page href="/">Home </a></li>
+<li ><a class=page href="/login">Login</a></li>
+<li><a class=page href="/signup">Signup</a></li>
+{% endblock %}
+
+{%block container%}
+<div class=container>
+    {%block message%}
+    <div>
+        {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %} 
+        {% for category, message in messages %} 
+        {%  if category =='error'%}
+        <h3 class=emsg>{{ message }}</h3>
+        
+
+        {%endif%}{% endfor %} {% endif %} {% endwith %}
+    </div>
+    {% endblock %}
+    <h3 class=heading>{% block title %}Login {% endblock %}</h3>
+    
+{%block content %}
+<form method="POST">
+    <label for="email">Email Id</label>
+    <br>
+    <input type="email" name="email" id="email" placeholder="enter your email id"/>
+    <br>
+    <label for="passward">Password</label>
+    <br>
+    <input type="password" name="password" id="password" />
+    <br>
+    <button type="submit" class=btn>Login</button>
+    <p>
+    <a href="forgot"> Forgot password?</a>
+    </p>
+</form>
+{% endblock %}
+</div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{%block container%}
+<div class=blog>
+    <h3 class=heading>{% block title %} My Blog {% endblock %}</h3>
+    <form method="POST">
+        
+        <label for="title" style="color:orangered;">Title </label>
+        <br>
+        <input type="text" id="title" name="title" placeholder="Enter the title" class="title" value='{{blog.title}}'>
+        <br>
+        <label for="note" style="color: orangered;">Blog</label>
+        <br>
+        <textarea name="note" id="note" cols="10" rows="5" placeholder="Write your blog" class="writeblog">{{blog.data}}</textarea> 
+        
+        <button type="submit" class=btn >Update</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+    <head>
+        <title>my blog</title>
+        <link rel="stylesheet" href="../static/base.css">
+        
+    </head>
+    <body>
+        <div class=cover>
+            <div>
+                <h1 class=head>My Experience</h1>
+                <ul>
+                   
+                    
+                    {% block log %}
+                    {% endblock %}
+                    
+                </ul>
+                
+            </div> 
+            
+            <br/>
+            {%block container%}
+            <div class=container>
+               {%block message%}
+                
+                {%endblock%}
+            
+                <h3 class=heading>{% block title %} home {% endblock %}</h3>
+                <div class=box >
+                    {% block content %} 
+                    {% endblock %}
+                
+                </div>
+            </div>
+           
+           
+            {%endblock%}
+            
+        </div>
+           
+    </body>
+  
+    
+    
+</html>
