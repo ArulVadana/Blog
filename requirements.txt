@@ -1,0 +1,4 @@
+Python
+Flask
+Flask-SQLAlchemcy
+flask-login
