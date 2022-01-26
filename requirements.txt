@@ -1,4 +1,4 @@
-Python
-Flask
-Flask-SQLAlchemcy
-flask-login
+Python==3.8.3
+flask==1.1.2                      
+flask-login==0.5.0                
+flask-sqlalchemy==2.4.4
