@@ -47,10 +47,10 @@ def main():
     create_container_group(aciclient, resource_group, container_group_name,
                            container_image_app)
 
-    list_container_groups(aciclient, resource_group)
+   
     print_container_group_details(aciclient,
                                   resource_group,
-                                  multi_container_group_name)
+                                  container_group_name)
 
 def create_container_group(aci_client, resource_group,
                            container_group_name, container_image_name):
