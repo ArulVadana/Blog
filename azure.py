@@ -24,7 +24,7 @@ def main():
     resource_group_name = 'Blog'
                                 
     container_group_name = 'app'
-    container_image_app = "microsoft/aci-helloworld"
+    container_image_app = "experience.azurecr.io"
 
     auth_file_path = getenv('AZURE_AUTH_LOCATION', None)
     if auth_file_path is not None:
