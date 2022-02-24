@@ -1,6 +1,6 @@
 FROM python:latest
 WORKDIR /app
 COPY . .
-RUN pip install -r requiremenys.txt
+RUN pip install -r requirements.txt
 EXPOSE 80
-CMD["python","main.py"]
+CMD["python","webapp/main.py"]
