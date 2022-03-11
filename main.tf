@@ -46,6 +46,6 @@ module "web_app_container" {
   }
   docker_registry_username = "experience"
   docker_registry_url = "experience.azurecr.io/flaskapp:v1"
-  docker_registry_password = "wtkoNySY0z2/P/lOWr/SZvJDXmg6LZPH"
+  docker_registry_password = "password"
 
 }
