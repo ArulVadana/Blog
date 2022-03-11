@@ -1,14 +1,22 @@
-# Flask-Web-app
+## Flask-Web-app
+#Resources used
+Azure container registry
+Azure webapp
+
+#About
 Blogger web application developed using Flask
 
 Flask frame is used to develop this web app
 
 Database used to store user data is sqlalchemcy
 
-# Running the app
+#view the app
 
-python main.py
+The app is deployed in azure webapp https://interview-experience.azurewebsites.net
 
-# view the app
+#Terraform 
+The file main.tf is used to create the azure resources
 
-http://127.0.0.1:80
+#Dockerfile
+The dockerfile is used to create the docker image. The image is pushed into azure container registry.
+
