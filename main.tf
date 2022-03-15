@@ -41,7 +41,6 @@ module "web_app_container" {
 
   plan ={
     name = var.aspname
-    sku_size = "B1"
     
   }
   docker_registry_username = "experience"
